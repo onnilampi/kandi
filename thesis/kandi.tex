@@ -1,0 +1,329 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                %%
+%% Esimerkki opinnäytteen tekemisestä LaTeX:lla                   %%
+%% Alkuperäinen versio Luis Costa,  muutokset Perttu Puska        %%
+%% Ruotsinkielen tuki lisätty 15092014                            %%
+%%                                                                %%
+%% Tähän esimerkkiin kuuluu tiedostot                             %%
+%%         opinnaytepohja.tex (versio 2.01)                       %%
+%%         thesistemplate.tex (versio 2.01) (for text inEnglish)  %%
+%%         aaltothesis.cls (versio 2.01)                          %%
+%%         kuva1.eps                                              %%
+%%         kuva2.eps                                              %%
+%%         kuva1.pdf                                              %%
+%%         kuva2.pdf                                              %%
+%%                                                                %%
+%%                                                                %%
+%% Kääntäminen joko                                               %%
+%% latex:                                                         %%
+%%             $ latex opinnaytepohja                             %%
+%%             $ latex opinnaytepohja                             %%
+%%                                                                %%
+%%   Tuloksena on tiedosto opinnayte.dvi, joka                    %%
+%%   muutetaan ps-muotoon seuraavasti                             %%
+%%                                                                %%
+%%             $ dvips opinnaytepohja -o                          %%
+%%                                                                %%
+%%   ja edelleen pdf-muotoon seuraavasti                          %%
+%%                                                                %%
+%%             $ ps2pdf opinnaytepohja.ps                         %%
+%%                                                                %%
+%% Tai                                                            %%
+%% pdflatex:                                                      %%
+%%             $ pdflatex opinnaytepohja                          %%
+%%             $ pdflatex opinnaytepohja                          %%
+%%                                                                %%
+%%   Tuloksena on tiedosto opinnaytepohja.pdf                     %%
+%%                                                                %%
+%% Selittävät kommentit on tässä esimerkissä varustettu           %%
+%% %%-merkeillä ja muutokset, joita käyttäjä voi tehdä,           %%
+%% on varustettu %-merkeillä                                      %%
+%%                                                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Käytä toinen näistä:
+%% ensimmäinen, jos käytät pdflatexia, joka kääntää tekstin suoraan 
+%% pdf-tiedostoksi (kuvat on oltava jpg- tai pdf-tiedostoina)
+%% toinen, jos haluat tuottaa ps-tiedostoa (käytä eps-formaattia kuville,
+%% alä käytä ps-muotoisia kuvia!)
+%%
+\documentclass[finnish,12pt,a4paper,pdftex,elec,utf8]{aaltothesis}
+%\documentclass[finnish,12pt,a4paper,dvips]{aaltothesis}
+
+%% Kirjoita y.o. \documentclass optioiksi
+%% korkeakoulusi näistä: arts, biz, chem, elec, eng, sci
+%% editorisi käyttämä merkkikoodaustapa: utf8, latin1
+%%
+
+%% Käytä näitä, jos kirjoitat englanniksi. Katso englanninokset tiedostosta
+%% thesistemplate.tex.
+%\documentclass[english,12pt,a4paper,pdftex,elec,utf8]{aaltothesis}
+%\documentclass[english,12pt,a4paper,dvips]{aaltothesis}
+
+\usepackage{graphicx}
+
+%% Matematiikan fontteja, symboleja ja muotoiluja lisää, näitä tarvitaan usein 
+\usepackage{amsfonts,amssymb,amsbsy}
+
+%% Jos et jostain syystä pidä, miten alla oleva hyperref-paketti käyttää
+%% fontteja, värejä yms., käytä tämän paketin makroja muuttamaan
+%% fonttimäärittelyt. Katso paketin dokumentaatiota. Paketti määrittelee
+%% \url-makron, joten ota paketti käyttöön, jos et käytä hyperref-pakettia.
+%%
+%\usepackage{url}
+
+%% Saat pdf-tiedoston viittaukset ja linkit kuntoon seuraavalla paketilla.
+%% Paketti toimii erityisen hyvin pdflatexin kanssa. 
+%%
+\usepackage{hyperref}
+\hypersetup{pdfpagemode=UseNone, pdfstartview=FitH,
+    colorlinks=true,urlcolor=red,linkcolor=blue,citecolor=black,
+    pdftitle={Kuormantasaus www-palvelimissa},pdfauthor={Onni Lampi},
+pdfkeywords={load balancing dns}}
+
+
+%% Kaikki mikä paperille tulostuu, on tämän jälkeen
+\begin{document}
+
+%% Korjaa vastaamaan korkeakouluasi, jos automaattisesti asetettu nimi on 
+%% virheellinen 
+%%
+%% Change the school field to specify your school if the automatically 
+%% set name is wrong
+% \university{aalto-yliopisto}
+% \school{Sähkötekniikan korkeakoulu}
+
+%% Vain kandityölle: Korjaa seuraavat vastaamaan koulutusohjelmaasi
+%%
+\degreeprogram{Informaatioteknologia}
+%%
+
+%% VAIN DI/M.Sc.- JA LISENSIAATINTYÖLLE: valitse laitos, 
+%% professuuri ja sen professuurikoodi. 
+%%
+%\department{Radiotieteen ja -tekniikan laitos}
+%\professorship{Piiriteoria}
+%%
+
+%% Valitse yksi näistä kolmesta
+%%
+\univdegree{BSc}
+%\univdegree{MSc}
+%\univdegree{Lic}
+
+%% Oma nimi
+%%
+\author{Onni Lampi}
+
+%% Opinnäytteen otsikko tulee tähän ja uudelleen englannin- tai 
+%% ruostinkielisen abstraktin yhteydessä. Älä tavuta otsikkoa ja
+%% vältä liian pitkää otsikkotekstiä. Jos latex ryhmittelee otsikon
+%% huonosti, voit joutua pakottamaan rivinvaihdon \\ kontrollimerkillä.
+%% Muista että otsikkoja ei tavuteta! 
+%% Jos otsikossa on ja-sana, se ei jää rivin viimeiseksi sanaksi 
+%% vaan aloittaa uuden rivin.
+%% 
+\thesistitle{Kuormantasaus www-palvelimissa}
+
+\place{Espoo}
+
+%% Kandidaatintyön päivämäärä on sen esityspäivämäärä! 
+%% 
+\date{14.5.2017}
+
+%% Kandidaattiseminaarin vastuuopettaja tai diplomityön valvoja.
+%% Huomaa tittelissä "\" -merkki pisteen jälkeen, ennen välilyöntiä ja
+%% seuraavaa merkkijonoa. 
+%% Näin tehdään, koska kyseessä ei ole lauseen loppu, jonka jälkeen tulee 
+%% hieman pidempi väli vaan halutaan tavallinen väli.
+%%
+\supervisor{DI Mika Nupponen} %{Prof.\ Pirjo Professori}
+
+%% Kandidaatintyön ohjaaja(t) tai diplomityön ohjaaja(t). Ohjaajia saa
+%% olla korkeintaan kaksi.
+%% 
+%\advisor{Prof.\ Pirjo Professori}
+\advisor{TkT Sebastian Sonntag}
+%\advisor{DI Tina Tutkija}
+
+%% Aaltologo: syntaksi:
+%% \uselogo{aaltoRed|aaltoBlue|aaltoYellow|aaltoGray|aaltoGrayScale}{?|!|''}
+%% Logon kieli on sama kuin dokumentin kieli
+%%
+\uselogo{aaltoRed}{''}
+
+%% Tehdään kansilehti
+%%
+\makecoverpage
+
+
+%% Suomenkielinen tiivistelmä
+%% Kaikki tiivistelmässä tarvittava tieto (nimesi, työnnimi, jne.) käytetään
+%% niin kuin se on yllä määritelty.
+%% Tiivistelmän avainsanat
+%%
+\keywords{www palvelin kuormantasaus dns}
+%% Tiivistelmän tekstiosa
+\begin{abstractpage}[finnish]
+    Tiivistelmää laajennetaan kandityön edistyessä  
+\end{abstractpage}
+
+%% Pakotetaan uusi sivu varmuuden vuoksi, jotta 
+%% mahdollinen suomenkielinen ja englanninkielinen tiivistelmä
+%% eivät tule vahingossakaan samalle sivulle
+%%
+\newpage
+%
+%% Opinnäytteen ostikko englanniksi. Poista, jos et tarvitse sitä.
+%\thesistitle{Thesis template}
+%%\supervisor{Prof.\ Pirjo Professori}
+%\advisor{D.Sc.\ (Tech.) Olli Ohjaaja}
+%%\advisor{M.Sc.\ Polli Pohjaaja}
+%\degreeprogram{Electronics and electrical engineering}
+%\department{Department of Radio Science and Technology}
+%\professorship{Circuit theory}
+%%% Abstract keywords
+%\keywords{Resistor, Resistance,\\ Temperature}
+%%% Abstract text
+%\begin{abstractpage}[english]
+%Your abstract in English. Try to keep the abstract short, approximately 
+% 100 words should be enough. Abstract explains your research topic, 
+% the methods you have used, and the results you obtained.  
+%\end{abstractpage}
+%
+%%% Force new page so that the Swedish abstract starts from a new page
+%\newpage
+%
+%% Ruotsinkiellinen tiivitelmä. Poista, jos et tarvitse sitä.
+%% 
+%% Opinnäytteen ostikko ruotsiksi.
+%\thesistitle{Arbetets titel}
+%%\supervisor{Prof.\ Pirjo Professori}
+%\advisor{TkD\ Olli Ohjaaja} %
+%%\advisor{M.Sc.\ Tina Tutkija}
+%\degreeprogram{Elektronik och elektroteknik}
+%\department{Institutionen för radiovetenskap och -teknik}%
+%\professorship{Kretsteori}  %
+%%% Abstract keywords
+%\keywords{Nyckelord p\aa{} svenska,\\ Temperatur}
+%%% Abstract text
+%\begin{abstractpage}[swedish]
+% Sammandrag p\aa{} svenska.
+% Try to keep the abstract short, approximately 
+% 100 words should be enough. Abstract explains your research topic, 
+% the methods you have used, and the results you obtained.  
+%\end{abstractpage}
+
+%% Note that if you are writting your master's thesis in English, place
+%% the English abstract first followed by the possible Finnish abstract
+
+%% Esipuhe 
+%%
+\mysection{Esipuhe}
+
+Kirjoitetaan myöhemmin, mielellään viimeisenä osana työtä.\\
+
+\vspace{5cm}
+Otaniemi, 19.6.2015
+
+\vspace{5mm}
+{\hfill Onni S.\ Lampi \hspace{1cm}}
+
+%% Pakotetaan varmuuden vuoksi esipuheen jälkeinen osa
+%% alkamaan uudelta sivulta
+\newpage
+
+
+%% Sisällysluettelo
+\thesistableofcontents
+
+
+%% Symbolit ja lyhenteet
+\mysection{Lyhenteet ja termistö}
+
+\subsection*{Lyhenteet}
+
+\begin{tabular}{ll}
+    DNS & Domain Name Service \\
+    TCP & Transmission Control Protocol\\
+    UDP & User Datagram Protocol\\
+\end{tabular}
+\subsection*{Termistöä}
+
+\begin{tabular}{ll}
+    Kuormantasaus & palvelinpyyntöjen hajauttaminen\\
+\end{tabular}
+
+
+%% Sivulaskurin viilausta opinnäytteen vaatimusten mukaan:
+%% Aloitetaan sivunumerointi arabialaisilla numeroilla (ja jätetään
+%% leipätekstin ensimmäinen sivu tyhjäksi, 
+%% ks. alla \thispagestyle{empty}).
+%% Pakotetaan lisäksi ensimmäinen varsinainen tekstisivu alkamaan 
+%% uudelta sivulta clearpage-komennolla. 
+%% clearpage on melkein samanlainen kuin newpage, mutta 
+%% flushaa myös LaTeX:n floatit 
+%% 
+\cleardoublepage
+\storeinipagenumber
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%% Leipäteksti alkaa
+%%
+%\chapter{Suunnitelma}
+\section{Johdanto}
+Tähän selostus johdannosta.
+\section{Työn tavoite}
+Työn tavoitteen kertomista.
+\section{Teoria, aineisto, menetelmä}
+Menetelmästä
+\newpage
+\section{Aikataulu kesälle 2017}
+Alla aikataulua viikkotarkkuudella työn etenemisestä:
+\begin{itemize}
+    \item \textbf{Viikko 21:} Esitehtävän tekoa. Työkaluihin tutustumista (lähinnä LaTeX ja BibTeX)
+    \item \textbf{Viikko 22:} Maanantaina ja tiistaina luentopäivät. Mahdollinen palaveri ohjaajan kanssa loppuviikosta.
+    \item \textbf{Viikko 23:} Materiaalin keräämistä ja jäsentelyä. Teoriaosuuden ranka valmiiksi.
+    \item \textbf{Viikko 24:} Teoriaosuuden vedos 1 valmiiksi, palautus perjantaina.
+    \item \textbf{Viikko 25:} Palautteen pohjalta teoriaosuuden työstämistä parempaan kuntoon.
+    \item \textbf{Viikko 26:} Lähdeluettelon viimeistely, kuvien tuottaminen. Case-studyn aloitus.
+    \item \textbf{Viikko 27:} Sunnuntaina toisen vedoksen DL.
+    \item \textbf{Viikko 28:} Pienryhmäkeskustelua toidesta vedoksesta. Tämän pohjalta parannuksia.
+    \item \textbf{Viikko 29:} Maanantaina raportti pienryhmäkeskustelusta palautettu. Case-studyn tekninen toteutus tiedossa. Kolmas vedos palautetaan sunnuntaina.
+    \item \textbf{Viikko 30:} Pienryhmäkeskustelua ja tämän raportointia. Case-studyn tekninen toteutus alkaa.
+    \item \textbf{Viikko 31:} Neljäs vedos palautettava sunnuntaina. Tähän vedokseen jo alustavasti kuvia ja dataa case-studystä.
+    \item \textbf{Viikko 32:} Teoriaosuuden viimeistely. Johtopäätöksiä case-studystä itse työhön.
+    \item \textbf{Viikko 33:} Perjantaina kommentit ohjaahalta, näiden perusteella raivokasta työn parantelua.
+    \item \textbf{Viikko 34:} Sunnuntaina seminaarikalvot valmiina. Näiden työstöä loppuviikosta.
+    \item \textbf{Viikko 35:} Seminaariviikko.
+    \item \textbf{Viikko 36:} Työn viimeistelyä.
+    \item \textbf{Viikko 37:} Työn viimeistelyä, viimeinen DL palauttaa työ on tämän viikon sunnuntai.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}
+\clearpage
+
+\nocite{*}
+\bibliography{kandi}
+\bibliographystyle{ieeetr}
+
+\end{document}
