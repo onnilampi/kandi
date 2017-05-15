@@ -125,7 +125,7 @@ pdfkeywords={load balancing dns}}
 %% Jos otsikossa on ja-sana, se ei jää rivin viimeiseksi sanaksi 
 %% vaan aloittaa uuden rivin.
 %% 
-\thesistitle{Kuormantasaus www-palvelimissa}
+\thesistitle{Työnimi: Kuormantasaus www-palvelimissa}
 
 \place{Espoo}
 
@@ -248,12 +248,12 @@ Otaniemi, 19.6.2015
 \begin{tabular}{ll}
     DNS & Domain Name Service \\
     TCP & Transmission Control Protocol\\
-    UDP & User Datagram Protocol\\
 \end{tabular}
 \subsection*{Termistöä}
 
 \begin{tabular}{ll}
-    Kuormantasaus & palvelinpyyntöjen hajauttaminen\\
+    Kuormantasaus & palvelinpyyntöjen hajauttaminen esimerkiksi\\
+                  & maantieteellisen sijainnin perusteella.\\
 \end{tabular}
 
 
@@ -276,11 +276,50 @@ Otaniemi, 19.6.2015
 %%
 %\chapter{Suunnitelma}
 \section{Johdanto}
-Tähän selostus johdannosta.
+Internetin alkuajoista lähtien vuosikymmenten ajan vallitsi tarjotuissa palveluissa selkeä trendi: yksi palvelu, yksi palvelin.
+Palvelinten resurssit ja pyyntoihin vastaamiskyky eivät kuitenkaan skaalaudu lineaarisesti, vaan vastaan tulee usein jo pelkkä kaistanleveys.
+Internetin laajentuessa ja kasvaessa nousee hajautettujen palvelinratkaisujen merkitys yhä suuremmaksi.
+Mitä enemmän edellä mainittuja ratkaisuja käytetään tuotantoympäristöissä, sitä merkityksellisempää on kuormantasaus.
+Kuormantasauksella voidaan saavuttaa merkittäviä ja konkreettisia etuja kaistanleveyden ja palvelinkapasiteetin säästämisessä.\\
+
+Kuormantasausta voidaan harjoittaa monin eri tavoin, toisistaan jopa merkittävästi eroavilla tekniikoilla.
+Tässä työssä käsitellään ja vertaillaan erilaisia kuormantasaustenkiikoita, niiden skaalautuvuutta sekä muita ominaisuuksia.
+Työssä keskitytään muutamaan jo olemassa olevaan ja laajasti käytettiin teknologiaan.
+Lisäksi käsitellään nopeasti mahdollisesti uusia ja kokeellisia teknologioita.
+
+\newpage
+
 \section{Työn tavoite}
-Työn tavoitteen kertomista.
+Tämän työn tavoitteena on perehtyä ja oppia ymmärtämään erilaisia kuormantasaustekniikoita, sekä selventää kirjallisuudessa käsitellyt merkittävät erot erilaisten teknologioiden välillä.
+Keskiössä on myös selvitys siitä, miksi erilaisissa tuotantoympäristöissä käytetään tiettyjä teknologioita.
+Tarkastelun ei ole tarkoitus pureutua jokaisen teknologian historiaan ja totuttuihin käytänteisiin, vaan tutkia aihetta juurikin käyttöasteen kannalta.\\
+
+Työssäni on alustavasti kolme keskeistä tutkimuskysymystä:
+\begin{itemize}
+    \item Mitkä ovat merkittävimmät kuormantasausteknologiat?
+    \item Onko olemassa vain yhtä oikeaa tapaa toteuttaa kuormantasaus?
+    \item Miten laajalti kuormantasausta käytetään ja missä yhteyksissä?
+\end{itemize}
+Työn tavoitteena on siis saada hyvä kokonaiskuva teknologioiden nykytilasta.
+Tavoitteena on myös tehdä itse kandityö englanniksi.
+
+\newpage
+
 \section{Teoria, aineisto, menetelmä}
-Menetelmästä
+
+Työn yleisenä teoriataustana toimii kandidaattivaiheessa saatu perusymmärrys tietoverkkojen rakenteesta laajalla ja pienellä skaalalla.
+On tärkeää ymmärtää ennakkoon perusteet Internetin toiminnasta, sekä tuntea niiden historiaa siinä määrin kuin se on käyttöasteen kannalta olennaista.
+On perusteltua todeta, että vahva teoriatausta työn suorittamiseen on olemassa ja sitä tullaan työssä varmasti hyödyntämään.
+
+Työssä ei tulla juurikaan suorittamaan empiiristä tutkimusta, vaan painopiste on kirjallisuudessa.
+Tämä johtuu siitä, ettei kyseessä olevaa teknologiaa ole mielekästä kokeilla laboratorioympäristössä; sitä tehdään tarpeeksi jo olemassa olevien tutkimusten taustaksi.
+Tietoa työn tueksi on helppo etsiä niin perinteisestä kirjallisuudesta, kuin tutkimuspapereista.
+
+Materiaali on usein huomattavan mielipidepainotteista.
+Tämän takia on tärkeää osata löytää matariaalista tekniset seikat ja teknologian ydin, ei niinkään keskittyä kirjoittajan tai kirjoittajien mielipiteisiin kyseisestä teknologiasta.
+
+Omien johtopäätösten osallisuus tulee olemaan työn loppupuolella suuressa roolissa, vaikkakin kyse on enemmän asioiden tulkitsemisesta kuin suurista tieteellisistä johtopäätöksistä.
+
 \newpage
 \section{Aikataulu kesälle 2017}
 Alla aikataulua viikkotarkkuudella työn etenemisestä:
@@ -302,24 +341,9 @@ Alla aikataulua viikkotarkkuudella työn etenemisestä:
     \item \textbf{Viikko 34:} Sunnuntaina semmakalvojen DL.
     \item \textbf{Viikko 35:} Seminaariviikko.
     \item \textbf{Viikko 38:} Viimeisen version DL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{itemize}
+Tavoitteena on saada valtaosa työn tekstistä valmiiksi ennen kolmatta vedosta.
+Tämän jälkeen keskityn kielelliseen asuun, sekä seminaarikalvoihin hiomiseen.
 \clearpage
 
 \nocite{*}
