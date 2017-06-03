@@ -10,3 +10,4 @@
 *.make
 *.d
 *.fls
+!kandi.pdf
