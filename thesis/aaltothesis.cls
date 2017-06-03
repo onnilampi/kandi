@@ -102,7 +102,7 @@
 \RequirePackage{inputenc}% For scands in both Finnish and English input docs
 \RequirePackage{lmodern}%
 %  \RequirePackage{cmlgc} % For mac users(?), uncomment this line
-\RequirePackage[kerning,spacing,babel]{microtype}%
+%\RequirePackage[kerning,spacing,babel]{microtype}%
 %
 \RequirePackage{calc}%
 \RequirePackage{color}%
