@@ -1,0 +1,68 @@
+\documentclass[a4paper, 12pt, finnish]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[finnish]{babel}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\Large\bfseries}
+    {}            
+      {0pt}      
+        {\huge} 
+        \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\usepackage{hyperref}
+\hypersetup{pdfpagemode=UseNone, pdfstartview=FitH, colorlinks=true,urlcolor=red,linkcolor=blue,citecolor=black,pdftitle={},pdfauthor={}}
+\setlength{\parindent}{0mm}
+\setlength{\emergencystretch}{15pt}
+\renewcommand{\bibname}{References}
+\newcommand*{\findate}{\the\day.\the\month.\the\year} 
+
+\begin{document}
+
+
+
+\chapter{Yhteenveto}
+Kuormantasaus www-palvelimissa\\
+Kypsyysnäyte- 7.8.2017\\
+Onni Lampi - 430023
+
+\section*{}
+
+Kuormantasaus www-palvelimissa on nykypäivän Internet-infrastruktuurin kannalta yksi tärkeimmistä tutkimusaiheista.
+Kuormantasaus voidaan toteuttaa monella teknisesti toisistaan täysin eroavilla tavoilla, eikä yhtä oikeaa tapaa toimia välttämättä ole.
+Työn tarkoituksena ja perimmäisenä motivaationa oli vertailla eri teknologioita keskenään.\\
+
+Internetin alkuajoista lähtien vuosikymmenten ajan vallitsi tarjotuissa palveluissa selkeä trendi: yksi palvelu, yksi palvelin.
+Palvelinten resurssit ja kyky vastata pyyntoihin eivät kuitenkaan skaalaudu lineaarisesti, vaan vastaan tulee usein jo pelkkä kaistanleveys.
+Internetin laajentuessa ja kasvaessa nousee hajautettujen palvelinratkaisujen merkitys yhä suuremmaksi;
+käyttäjän kannalta on yhdentekevää, mistä sisältö jaellaan.
+Tärkeintä on saada sisältö toimitettua loppukäyttäjälle luotettavasti ja nopeasti.
+Mitä enemmän edellä mainittuja ratkaisuja käytetään tuotantoympäristöissä, sitä merkityksellisempää on kuormantasaus.
+Kuormantasauksella voidaan saavuttaa merkittäviä ja konkreettisia etuja kaistanleveyden ja palvelinkapasiteetin säästämisessä.\\
+
+Tässä työssä käsiteltiin ja vertailtiin erilaisia kuormantasaustenkiikoita, niiden skaalautuvuutta sekä muita ominaisuuksia.
+Työssä keskityttiin muutamaan jo olemassa olevaan ja laajasti käytettiin teknologiaan.\\
+
+Kuormantasausta voidaan harjoittaa monin eri tavoin, toisistaan jopa merkittävästi eroavilla tekniikoilla.
+Karkeasti ajatellen kuormantasaustekniikat jakautuvat kolmeen erilaiseen leiriin: sijaintiperusteisiin,
+sisällön huomioon ottaviin ja sisällöstä piittaamattomiin tekniikoihin.\\
+
+Sijaintiperusteisessa ratkaisussa sisältö palvellaan käyttäjälle parhaan käytössä olevan yhteyden ylitse.
+Esimerkiksi Yhdysvalloissa ja Saksassa voidaan ylläpitää omia palvelimiaan, joista toinen palvelee Amerikan mannerta ja toinen Euraasiaa.
+Palvelun laadussa saavutetaan merkittävä parannus, sillä viive tiedonsiirrossa vähenee merkittävästi jo pelkästään maantieteellisten seikkojen takia.
+Sijaintiperusteinen kuormantasaus on tekniikkana suhteellisen helposti toteutettava ja ei ääritapauksessa tarvitse lainkaan älyä taakseen maantieteellisen sijainnin kartoittamisen lisäksi.\\
+
+Sisältöperusteiset ratkaisut ottavat huomioon käyttäjän ja palvelun tarpeet.
+Esimerkiksi vaikka jonkin yrityksen staattinen informaatiosisältö saatetaan palvella verkkosivuilta nopeasta välimuistista,
+resurssi-intensiivisen ja harvinaisemman verkkokauppapalvelun palvelee toinen käyttöön optimoitu palvelin.\\
+
+Kolmas karkea kategoria on sisällöstä riippumattomat teknologiat.
+Näitä ei tule sekoittaa sijaintiperusteisiin tekniikoihin, vaan kyseessä on vieläkin koneellisempi ratkaisu.
+Kuormaa tasataan esimerkiksi tiukalla jonoperiaatteella, esimerkiksi kolme palvelinta kukin vuorollaan ottavat yhden käyttäjän palveltavakseen.\\
+	
+Tämän työn tavoitteena oli perehtyä ja oppia ymmärtämään erilaisia kuormantasaustekniikoita, sekä selventää kirjallisuudessa käsitellyt merkittävät erot erilaisten teknologioiden välillä.
+Keskiössä oli myös selvitys siitä, miksi erilaisissa tuotantoympäristöissä käytetään tiettyjä teknologioita.\\
+	
+
+\end{document}
